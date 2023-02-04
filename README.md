@@ -1,71 +1,59 @@
-
 ## Step 0:
 
 Please refer to the [SETUP.md](./SETUP.md) file.
 
-## Step 1 - Floor:
+## Step 1 - Creation of the Enemy:
 
 ### 📑 **Description**:
 
-in this step wee are gonna create a [3d object](https://docs.unity3d.com/Manual/class-GameObject.html) name floor and add a [script](https://docs.unity3d.com/Manual/Quickstart3DCreate.html#Scripting) to it 
-
+In this step, we will create an enemy object using a [3D Cube](https://docs.unity3d.com/Manual/class-Cube.html) and set it up for movement.
 
 ### 📌 **Tasks**:
 
-   - crée un objet "floor" dans "prefabs"
-   - ajouter ses variable et un script "floorgéneration"
+- Create an empty [GameObject](https://docs.unity3d.com/Manual/class-GameObject.html) and drag a cube into it.
+- Place two waypoints 10 units away from the cube along the x and y axis, respectively, using the [Transform component](https://docs.unity3d.com/ScriptReference/Transform.html).
 
-<details> 
-<summary>✔️ Result preview</summary>
-<img src="" alt="backround image"/>
-</details>
-
-## Step 2 -generatoin de floor:
+## Step 2 - Creation of the Enemy Movement Script:
 
 ### 📑 **Description**:
 
-In this step, we will use the [Instantiate()](https://docs.unity3d.com/ScriptReference/Object.Instantiate.html) function to create multiple instances of our floor object. We will also explore ways to generate the floor at specific locations in the scene.
+In this step, we will create a [script](https://docs.unity3d.com/Manual/Quickstart3DCreate.html#Scripting) that will control the movement of the enemy.
 
 ### 📌 **Tasks**:
 
-   - Use the Instantiate() function to create a floor at the position (0, 0, 0)
-   - Create another floor at the position (10, 0, 0)
-   - Experiment with different positions and rotations for the floor using the [Transform](https://docs.unity3d.com/ScriptReference/Transform.html) component
+- Create a script called EnemyMovement.
+- Retrieve the two waypoints in the script using the [Transform component](https://docs.unity3d.com/ScriptReference/Transform.html).
+- Move the enemy from waypoint 1 to waypoint 2 using the script, by updating the [Transform component](https://docs.unity3d.com/ScriptReference/Transform.html) of the enemy GameObject.
 
-<details> 
-<summary>✔️ Result preview</summary>
-<img src="" alt="backround image">
-</details>
-
-## Step 3 - genere autour du joueur:
+## Step 3 - Generating Enemies:
 
 ### 📑 **Description**:
 
-In this step, we will use the [Vector3](https://docs.unity3d.com/ScriptReference/Vector3.html) class and the [transform.position](https://docs.unity3d.com/ScriptReference/Transform-position.html) property to generate the floor around the player as they move in the scene.
+In this step, we will use the map creation script to randomly generate enemies.
 
 ### 📌 **Tasks**:
 
-   - Use the [Vector3.Distance](https://docs.unity3d.com/ScriptReference/Vector3.Distance.html) method to determine the distance between the player and the current floor.
-   - Use the [Instantiate](https://docs.unity3d.com/ScriptReference/Object.Instantiate.html) function to generate new instances of the floor as the player moves in the scene.
-   - Experiment with different values for the distance and speed of the floor generation.
-   - Use the [Destroy](https://docs.unity3d.com/ScriptReference/Object.Destroy.html) function to remove the floor that is no longer needed.
+- Revisit the map creation script.
+- Create an enemy every time a new floor is created.
+- Make this creation random, with a 10% chance, using the [Random.Range](https://docs.unity3d.com/ScriptReference/Random.Range.html) function.
+- Use the [OnCollisionEnter](https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnCollisionEnter.html) function to handle collisions with enemies and kill the player.
 
-<details> 
-<summary>✔️ Result preview</summary>
-<img src="" alt="backround image">
-</details>
-
-## Step 4 -randome creation
+## Step 4 (Bonus) - Movement Angle:
 
 ### 📑 **Description**:
 
-In this step, we will use the Vector3 class and [transform.position](https://docs.unity3d.com/ScriptReference/Transform-position.html) property to randomly generate the floor as the player moves in the scene. We will also use [Random.Range()](https://docs.unity3d.com/ScriptReference/Random.Range.html) to generate random positions for the floor.
+In this bonus step, we will modify the movement of the enemy to follow a different angle.
 
 ### 📌 **Tasks**:
 
-   - Créer aléatoirement un floor diferent autour du player lorsqu'il se déplace sur un nouveau floor
+- To move the enemy along a different angle, modify the enemy's `transform.position` based on the desired angle and a set speed, using the [Transform component](https://docs.unity3d.com/ScriptReference/Transform.html) and trigonometry functions such as [Mathf.Sin](https://docs.unity3d.com/ScriptReference/Mathf.Sin.html) and [Mathf.Cos](https://docs.unity3d.com/ScriptReference/Mathf.Cos.html).
 
-<details>   
-<summary>✔️ Result preview</summary>
-<img src="" alt="backround image">
-</details>
+## Step 5 (Bonus) - Voxel:
+
+### 📑 **Description**:
+
+In this bonus step, we will create sprites using an object via [Voxel](https://en.wikipedia.org/wiki/Voxel).
+
+### 📌 **Tasks**:
+
+- Create sprites using an object via Voxel (Bonus Bonus Bonus).

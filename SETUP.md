@@ -17,5 +17,5 @@ For more information about the system requirements for Unity, visit the Unity we
 # Troubleshooting
 If you encounter any issues while installing Unity, please check the Unity documentation or visit the Unity support page for help.
 
-# That the 2 part of the workshop 
-PLease refere to [first worskhop](https://github.com/roxietre/workshop-unity) befor start this workshop
+# That the 3 part of the workshop 
+PLease refere to [2nd worskhop](https://github.com/roxietre/workshop_unity2) befor start this workshop
